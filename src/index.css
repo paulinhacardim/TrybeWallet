@@ -5,7 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: rgb(181, 217, 181) ; */
+  background-image: url('https://cdn.iconscout.com/icon/free/png-256/wallet-purse-pocket-dollar-finance-money-ecommerce-9-3711.png') ;
+  width: auto;
+  height: 100%;
+  opacity: 0,5;
 }
 
 code {

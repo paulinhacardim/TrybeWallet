@@ -64,4 +64,4 @@ const mapStateToProps = ({ wallet }) => ({
 export default connect(mapStateToProps)(Table);
 
 // toFixed arredonda números de acordo com a quantidade
-// de dígitos que determino. Como no requisito feito
+// de dígitos que determino. Como no requisito feito(2)
