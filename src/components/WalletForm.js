@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import fetchApi from '../services/fetchApi';
 import { actionRequest, addExpenses } from '../redux/actions';
-import { isElementOfType } from 'react-dom/test-utils';
 
 class WalletForm extends Component {
   state = {
