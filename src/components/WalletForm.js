@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import fetchApi from '../services/fetchApi';
 import { actionRequest, addExpenses } from '../redux/actions';
+import { isElementOfType } from 'react-dom/test-utils';
 
 class WalletForm extends Component {
   state = {
@@ -139,3 +140,9 @@ WalletForm.propTypes = {
 };
 
 export default connect(mapStateToProps)(WalletForm);
+
+// instanceOf compara a instância com o tipo.
+// verifica se um objeto é uma instância de uma classe específica
+// ou uma interface
+
+// Object seleciona apenas um elemento. Não acessa toda chave
