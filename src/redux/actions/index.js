@@ -4,6 +4,7 @@ import fetchApi from '../../services/fetchApi';
 export const USER_FORM = 'USER_FORM';
 export const USER_CURRENCIES = 'USER_CURRENCIES';
 export const ADD_EXPENSES = 'ADD_EXPENSES';
+export const REMOVE_ELEMENT = 'REMOVE_ELEMENT';
 
 export const dadosLogin = (email) => ({
   type: USER_FORM,
@@ -18,6 +19,11 @@ export const userCurrencies = (payload) => ({
 export const addExpenses = (payload) => ({
   type: ADD_EXPENSES,
   payload,
+});
+// requisito 8 - deletar uma despesa da tabela
+export const removeElement = (id) => ({
+  type: REMOVE_ELEMENT,
+  payload: id,
 });
 
 export const actionRequest = () => async (dispatch) => {

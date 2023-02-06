@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { removeElement } from '../redux/actions';
 
 class Table extends Component {
+  // requisito 8
+  deleteTable = (id) => {
+    const { dispatch } = this.props;
+    dispatch(removeElement(id));
+  };
+
   render() {
     const { expenses } = this.props;
     return (
@@ -41,6 +48,15 @@ class Table extends Component {
                         .toFixed(2)}
 
                     </td>
+                    <td>
+                      <button
+                        type="button"
+                        data-testid="delete-btn"
+                        onClick={ () => this.deleteTable(id) }
+                      >
+                        Excluir
+                      </button>
+                    </td>
                   </tr>
                 ))}
 
@@ -55,13 +71,17 @@ class Table extends Component {
 
 Table.propTypes = {
   expenses: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
+  dispatch: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = ({ wallet }) => ({
   expenses: wallet.expenses,
+
 });
 
 export default connect(mapStateToProps)(Table);
 
 // toFixed arredonda números de acordo com a quantidade
 // de dígitos que determino. Como no requisito feito(2)
+
+// botão para deletar despesas - requisito 8
