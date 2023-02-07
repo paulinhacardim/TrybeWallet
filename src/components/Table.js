@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { removeElement } from '../redux/actions';
+import { removeElement, editElement } from '../redux/actions';
 
 class Table extends Component {
   // requisito 8
   deleteTable = (id) => {
+    const { dispatch, expenses } = this.props;
+    const expenseFilter = expenses.filter((expense) => id !== expense.id);
+    dispatch(removeElement(expenseFilter));
+  };
+
+  editTable = (expense) => {
     const { dispatch } = this.props;
-    dispatch(removeElement(id));
+    dispatch(editElement(expense));
   };
 
   render() {
@@ -27,37 +33,50 @@ class Table extends Component {
               <th>Valor convertido</th>
               <th>Moeda de conversão</th>
               <th>Editar/Excluir</th>
-
             </thead>
 
             <tbody>
               {expenses
-                .map(({ value, description, currency, method, id, exchangeRates, tag,
-                }) => (
-                  <tr key={ id }>
+                .map((expense) => (
+                  <tr key={ expense.id }>
 
-                    <td>{tag}</td>
-                    <td>{description}</td>
-                    <td>{method}</td>
-                    <td>{Number(value).toFixed(2)}</td>
-                    <td>{exchangeRates[currency].name}</td>
-                    <td>{Number(exchangeRates[currency].ask).toFixed(2)}</td>
-                    <td>Real</td>
+                    <td>{expense.tag}</td>
+                    <td>{expense.description}</td>
+                    <td>{expense.method}</td>
+                    <td>{Number(expense.value).toFixed(2)}</td>
+                    <td>{expense.exchangeRates[expense.currency].name}</td>
                     <td>
-                      {(Number(value) * Number(exchangeRates[currency].ask))
+                      {Number(expense.exchangeRates[expense.currency].ask)
                         .toFixed(2)}
 
                     </td>
+                    <td>Real</td>
+                    <td>
+                      {(Number(expense.value) * Number(expense
+                        .exchangeRates[expense.currency].ask))
+                        .toFixed(2)}
+
+                    </td>
+
                     <td>
                       <button
                         type="button"
+                        data-testid="edit-btn"
+                        onClick={ () => this.editTable(expense) }
+                      >
+                        Editar despesa
+                      </button>
+
+                      <button
+                        type="button"
                         data-testid="delete-btn"
-                        onClick={ () => this.deleteTable(id) }
+                        onClick={ () => this.deleteTable(expense.id) }
                       >
                         Excluir
                       </button>
                     </td>
                   </tr>
+
                 ))}
 
             </tbody>
