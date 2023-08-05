@@ -1,21 +1,88 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  /* background-image: url('https://cdn.iconscout.com/icon/free/png-256/wallet-purse-pocket-dollar-finance-money-ecommerce-9-3711.png') ; */
-  width: 100%;
-  height: 400px;
-  /* opacity: 0.5; */
+  /* -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: rgb(115, 114, 114);
+ 
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  /* font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: whitesmoke;
 }
-/* 
-image {
+ 
+button {
+  background-color: rgb(116, 54, 131);
+  border-radius: 8px;
+  border-color: whitesmoke;
+  color: whitesmoke;
+  width: 150px;
+  height: 30px;
+  gap: 20px;
+ display:
 
-} */
+}
+
+header {
+ /* background-color: rgb(161, 222, 161); */
+  /* border-radius: 8px; */
+border-color: whitesmoke;
+color: whitesmoke;
+text-align: center;
+font-size: 20px;
+font-family:Verdana, Geneva, Tahoma, sans-serif;
+/* background-image: url(''); */
+}
+
+ form {
+  background-color: rgb(196, 130, 212);
+  /* opacity: 0.7; */
+  border-color: whitesmoke;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 40px;
+  font-size: 10px;
+  /* width: 270px; */
+  
+ }
+
+table {
+  background-color: rgb(196, 130, 212);
+  border-color: whitesmoke;
+  justify-content: space-between;
+  padding: 80px;
+  font-size: 20px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+div {
+  text-align: center;
+  font-size: 20px;
+  border-color: antiquewhite;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;  
+}
+
+thead {
+  color: rgb(115, 114, 114);
+  text-align:start;
+  background-color: bisque;
+  gap: 10px;
+}
+
+tbody {
+  background-color: bisque;
+  width: 130px;
+  height: 160px;
+ font-family:'Times New Roman', Times, serif;
+ border-radius: 8px;
+
+}
+
+input {
+color:  rgb(115, 114, 114);
+justify-content: space-between;
+
+}
